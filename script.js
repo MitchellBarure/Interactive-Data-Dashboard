@@ -1,4 +1,3 @@
-import { openModal } from "./modal.js";
 let employees = [
   { id: 1, name: "Alice Johnson", role: "Developer", score: 88 },
   { id: 2, name: "James Smith", role: "Designer", score: 73 },

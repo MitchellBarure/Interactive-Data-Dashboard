@@ -1,4 +1,4 @@
-export function openModal(employee, onSave) {
+function openModal(employee, onSave) {
   const overlay = document.createElement("div");
   overlay.classList.add("overlay");
 
@@ -45,8 +45,13 @@ export function openModal(employee, onSave) {
     const name = nameInput.value.trim();
     const score = Number(scoreInput.value);
 
-    if (!name || scoreInput.value === "" || Number.isNaN(score) || score < 0 || score > 100) {
-      error.textContent = "Enter a name and a score from 0 to 100.";
+    if (!name) {
+      error.textContent = "Please enter a name.";
+      return;
+    }
+
+    if (scoreInput.value === "" || Number.isNaN(score) || score < 0 || score > 100) {
+      error.textContent = "Score must be a number between 0 and 100.";
       return;
     }
 
