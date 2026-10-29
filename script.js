@@ -172,3 +172,20 @@ roleFilter.addEventListener("change", renderTable);
 document.getElementById("addBtn").addEventListener("click", () => openModal(null));
 
 renderTable();
+
+
+
+let sortColumn = "name";
+let sortDirection = "asc";
+
+document.querySelectorAll("[data-sort]").forEach(button => {
+    button.addEventListener("click", () => {
+        const column = button.dataset.sort;
+
+        if (sortColumn === column) {
+            sortDirection =
+                sortDirection === "asc" ? "desc" : "asc";
+        } else {
+            sortColumn = column;
+            sortDirection = "asc";
+        }
