@@ -14,11 +14,17 @@ const roleFilter = document.getElementById("roleFilter");
 const container = document.getElementById("tableContainer");
 const summary = document.getElementById("summary");
 
+
 function getColor(score) {
-  if (score >= 85) return "green";
-  if (score >= 70) return "yellow";
-  return "red";
+  if (score >= 85) {
+    return "green";
+  } else if (score >= 70) {
+    return "yellow";
+  } else {
+    return "red";
+  }
 }
+
 
 function renderTable() {
   container.innerHTML = "";
