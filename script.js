@@ -249,3 +249,9 @@ function filterEmployees() {
 
     renderTable(filteredEmployees);
 }
+
+
+searchInput.addEventListener("input", filterEmployees);
+roleFilter.addEventListener("change", filterEmployees);
+
+updateRoleFilter();
