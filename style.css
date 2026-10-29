@@ -20,16 +20,9 @@ th {
     cursor: pointer; 
 }
 
-.green { 
-    background: #c8f7c5; 
-}
-
-.yellow { 
-    background: #fff3b0; 
-}
-.red { 
-    background: #f8c4c4; 
-}
+.green  { background: #9ee999; }
+.yellow { background: #f0dd73; }
+.red    { background: #f05757; }
 
 #summary { 
     border: 1px solid #ccc; 
