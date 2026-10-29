@@ -208,9 +208,7 @@ document.querySelectorAll("[data-sort]").forEach(button => {
     });
 });
 
-const searchInput = document.getElementById("searchInput");
-const roleFilter = document.getElementById("roleFilter");
-
+const searchInput = search;
 function updateRoleFilter() {
     const selectedRole = roleFilter.value;
 
