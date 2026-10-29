@@ -1,0 +1,57 @@
+body { 
+    font-family: Arial, 
+    sans-serif; margin: 30px; 
+}
+
+table { 
+    border-collapse: collapse; 
+    width: 100%; 
+    margin: 15px 0; 
+}
+
+th, td { 
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: left; 
+}
+
+th { 
+    background: #eee; 
+    cursor: pointer; 
+}
+
+.green { 
+    background: #c8f7c5; 
+}
+
+.yellow { 
+    background: #fff3b0; 
+}
+.red { 
+    background: #f8c4c4; 
+}
+
+#summary { 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal { 
+    background: white; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: 
+    column; gap: 10px; 
+}
+#error { 
+    color: red; 
+}
