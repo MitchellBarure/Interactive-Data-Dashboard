@@ -45,7 +45,7 @@ export function openModal(employee, onSave) {
     const name = nameInput.value.trim();
     const score = Number(scoreInput.value);
 
-    if (!name || scoreInput.value === "" || score < 0 || score > 100) {
+    if (!name || scoreInput.value === "" || Number.isNaN(score) || score < 0 || score > 100) {
       error.textContent = "Enter a name and a score from 0 to 100.";
       return;
     }
