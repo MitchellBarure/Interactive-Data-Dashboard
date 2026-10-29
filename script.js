@@ -15,6 +15,7 @@ const container = document.getElementById("tableContainer");
 const summary = document.getElementById("summary");
 
 
+// The colors for these classes are defined in style.css.
 function getColor(score) {
   if (score >= 85) {
     return "green";
@@ -64,6 +65,7 @@ function renderTable() {
   // One row per employee
   list.forEach(emp => {
     const row = document.createElement("tr");
+  // The class comes from the employee's score in the data array
     row.classList.add(getColor(emp.score));
 
     [emp.name, emp.role, emp.score].forEach(value => {
