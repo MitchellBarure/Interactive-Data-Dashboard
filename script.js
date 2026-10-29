@@ -231,3 +231,21 @@ function updateRoleFilter() {
         ? selectedRole
         : "all";
 }
+
+function filterEmployees() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedRole = roleFilter.value;
+
+    const filteredEmployees = employees.filter(employee => {
+        const matchesName =
+            employee.name.toLowerCase().includes(searchTerm);
+
+        const matchesRole =
+            selectedRole === "all" ||
+            employee.role === selectedRole;
+
+        return matchesName && matchesRole;
+    });
+
+    renderTable(filteredEmployees);
+}
