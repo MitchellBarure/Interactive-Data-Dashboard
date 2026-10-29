@@ -189,3 +189,45 @@ document.querySelectorAll("[data-sort]").forEach(button => {
             sortColumn = column;
             sortDirection = "asc";
         }
+
+        const sortedEmployees = [...employees].sort((a, b) => {
+            let comparison;
+
+            if (column === "score") {
+                comparison = a.score - b.score;
+            } else {
+                comparison = a[column].localeCompare(b[column]);
+            }
+
+            return sortDirection === "asc"
+                ? comparison
+                : -comparison;
+        });
+
+        renderTable(sortedEmployees);
+    });
+});
+
+const searchInput = document.getElementById("searchInput");
+const roleFilter = document.getElementById("roleFilter");
+
+function updateRoleFilter() {
+    const selectedRole = roleFilter.value;
+
+    const roles = [...new Set(
+        employees.map(employee => employee.role)
+    )];
+
+    roleFilter.innerHTML = '<option value="all">All Roles</option>';
+
+    roles.forEach(role => {
+        const option = document.createElement("option");
+        option.value = role;
+        option.textContent = role;
+        roleFilter.appendChild(option);
+    });
+
+    roleFilter.value = roles.includes(selectedRole)
+        ? selectedRole
+        : "all";
+}
