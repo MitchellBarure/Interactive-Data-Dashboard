@@ -1,3 +1,4 @@
+import { openModal as openEditModal } from "./modal.js";
 let employees = [
   { id: 1, name: "Alice Johnson", role: "Developer", score: 88 },
   { id: 2, name: "James Smith", role: "Designer", score: 73 },
@@ -39,7 +40,8 @@ function renderTable() {
   const text = search.value.toLowerCase();
   const role = roleFilter.value;
   const list = employees.filter(emp =>
-    emp.name.toLowerCase().includes(text) && (role === "All" || emp.role === role)
+    emp.name.toLowerCase().includes(text) &&
+    (role === "All" || role === "all" || emp.role === role)
   );
 
   // Sorting
@@ -65,7 +67,13 @@ function renderTable() {
     const actions = document.createElement("td");
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
-    editBtn.addEventListener("click", () => openModal(emp));
+    editBtn.addEventListener("click", () => {
+      openEditModal(emp, ({ role, score }) => {
+        emp.role = role;
+        emp.score = score;
+        renderTable();
+      });
+    });
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.addEventListener("click", () => deleteEmployee(emp.id));
